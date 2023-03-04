@@ -1,8 +1,14 @@
+<script>
+export default {
+  props: ["anime"],
+};
+</script>
+
 <template>
   <div class="card">
     <a href="" target="_blank">
       <img src="https://placehold.it/150x250" alt="Anime Poster Image" />
-      <h3>Naruto</h3>
+      <h3>{{ anime.title }}</h3>
     </a>
   </div>
 </template>
@@ -29,14 +35,14 @@ img {
   transition: 0.4s;
 }
 
+img:hover {
+  transform: scale(1.05);
+}
+
 h3 {
   padding: 16px;
   color: #313131;
   transition: 0.4s;
-}
-
-img:hover {
-  transform: scale(1.05);
 }
 
 h3:hover {
