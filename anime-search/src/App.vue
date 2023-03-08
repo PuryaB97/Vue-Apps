@@ -13,7 +13,7 @@ const HandleSearch = async () => {
     .then((res) => res.json())
     .then((data) => data.results);
 
-  console.log(animelist.value);
+  search_query.value = "";
 };
 </script>
 
@@ -32,8 +32,11 @@ const HandleSearch = async () => {
       </form>
     </header>
     <main>
-      <div class="cards">
+      <div class="cards" v-if="animelist.length > 0">
         <Card v-for="anime in animelist" :key="anime.mal_id" :anime="anime" />
+      </div>
+      <div class="no-results" v-else>
+        <h3>Sorry, we have no results...</h3>
       </div>
     </main>
   </div>
